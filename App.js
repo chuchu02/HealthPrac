@@ -15,13 +15,26 @@ import tw from 'twrnc';
 
 import {theme} from './colors';
 
-const STORAGE_KEY = '@toDos';
-
 const App = () => {
   return (
-    <View style={tw`p-4 android:pt-2 bg-red-300 flex-row`}>
-      <Text style={tw`text-2xl`}>Hey there!</Text>
-    </View>
+    <>
+      <View style={tw`p-4 bg-red-300 flex-row justify-center flex-shrink-0`}>
+        <Text style={tw`text-xl text-[#000]`}>여기는 Header 입니다.</Text>
+      </View>
+      <ScrollView style={tw`p-4 bg-yellow-300 flex-grow`}>
+        <View style={tw`p-4 bg-black w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-red-500 w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-orange-500 w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-blue-500 w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-black w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-red-500 w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-orange-500 w-full h-[130px] mb-5`}></View>
+        <View style={tw`p-4 bg-blue-500 w-full h-[130px] mb-5`}></View>
+      </ScrollView>
+      <View style={tw`p-4 bg-green-500 flex-row justify-center flex-shrink-0`}>
+        <Text style={tw`text-xl text-[#000]`}>여기는 Footer 입니다.</Text>
+      </View>
+    </>
   );
 };
 
