@@ -8,6 +8,8 @@ import {
   TextInput,
   ScrollView,
   Alert,
+  Image,
+  ImageResizeMode,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -18,18 +20,50 @@ import {theme} from './colors';
 const App = () => {
   return (
     <>
-      <View style={tw`p-4 bg-red-300 flex-row justify-center flex-shrink-0`}>
-        <Text style={tw`text-xl text-[#000]`}>여기는 Header 입니다.</Text>
+      <View style={tw`p-4 bg-black flex-row justify-center flex-shrink-0`}>
+        <Text style={tw`text-xl text-[#FFF]`}>홈 트레이닝</Text>
       </View>
-      <ScrollView style={tw`p-4 bg-yellow-300 flex-grow`}>
-        <View style={tw`p-4 bg-black w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-red-500 w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-orange-500 w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-blue-500 w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-black w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-red-500 w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-orange-500 w-full h-[130px] mb-5`}></View>
-        <View style={tw`p-4 bg-blue-500 w-full h-[130px] mb-5`}></View>
+      <ScrollView style={tw`p-4 bg-white flex-grow`}>
+        <View style={styles.HealthBox}>
+          <Image
+            style={styles.HealthImageBox}
+            source={{
+              uri: 'https://ifh.cc/g/bX8Kmp.jpg',
+            }}
+          />
+        </View>
+        <View style={styles.HealthBox}>
+          <Image
+            style={styles.HealthImageBox}
+            source={{
+              uri: 'https://ifh.cc/g/Vs900F.jpg',
+            }}
+          />
+        </View>
+        <View style={styles.HealthBox}>
+          <Image
+            style={styles.HealthImageBox}
+            source={{
+              uri: 'https://ifh.cc/g/6A7Ysc.jpg',
+            }}
+          />
+        </View>
+        <View style={styles.HealthBox}>
+          <Image
+            style={styles.HealthImageBox}
+            source={{
+              uri: 'https://ifh.cc/g/KCtwLO.jpg',
+            }}
+          />
+        </View>
+        <View style={styles.HealthBox}>
+          <Image
+            style={styles.HealthImageBox}
+            source={{
+              uri: 'https://ifh.cc/g/1Fs4bR.jpg',
+            }}
+          />
+        </View>
       </ScrollView>
       <View style={tw`p-4 bg-green-500 flex-row justify-center flex-shrink-0`}>
         <Text style={tw`text-xl text-[#000]`}>여기는 Footer 입니다.</Text>
@@ -48,6 +82,25 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: 100,
+  },
+  HealthBox: {
+    width: '100%',
+    height: 140,
+    backgroundColor: 'black',
+    marginBottom: 10,
+    borderRadius: 25,
+  },
+  HealthImageBox: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+    borderRadius: 25,
+  },
+  HealthName: {
+    backgroundColor: 'red',
+    color: 'red',
+    fontSize: 38,
+    fontWeight: '600',
   },
 });
 
