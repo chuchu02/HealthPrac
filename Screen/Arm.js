@@ -17,7 +17,7 @@ import tw from 'twrnc';
 
 import {theme} from '../colors';
 
-const Chest = ({navigation}) => {
+const Arm = ({navigation}) => {
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -31,87 +31,67 @@ const Chest = ({navigation}) => {
         </View>
         <View style={styles.MainMenu}>
           <TouchableOpacity
-            activeOpacity={0.8}
-            style={styles.HealthBox}
-            onPress={() => {
-              navigation.navigate('ExplanationPage');
-            }}>
-            <View style={styles.HealthNameBox}>
-              <Text style={styles.HealthName}>푸쉬업</Text>
-            </View>
-            <Icon name="right" style={styles.RightArrow} />
-            <Image
-              style={styles.HealthImageBox}
-              source={{
-                uri: 'https://ifh.cc/g/rWGKOV.jpg',
-              }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.8}
             style={styles.HealthBox}
             onPress={() => {
               navigation.navigate('Chest');
             }}>
-            <View style={styles.HealthNameBox}>
-              <Text style={styles.HealthName}>인클라인 푸쉬업</Text>
-            </View>
-            <Icon name="right" style={styles.RightArrow} />
+            <Text style={styles.HealthName}>가슴 운동</Text>
             <Image
               style={styles.HealthImageBox}
               source={{
-                uri: 'https://ifh.cc/g/9MyAjM.jpg',
+                uri: 'https://ifh.cc/g/nPy47T.jpg',
               }}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            activeOpacity={0.8}
             style={styles.HealthBox}
             onPress={() => {
-              navigation.navigate('Chest');
+              navigation.navigate('Back');
             }}>
-            <View style={styles.HealthNameBox}>
-              <Text style={styles.HealthName}>디클라인 푸쉬업</Text>
-            </View>
-            <Icon name="right" style={styles.RightArrow} />
+            <Text style={styles.HealthName}>등 운동</Text>
             <Image
               style={styles.HealthImageBox}
               source={{
-                uri: 'https://ifh.cc/g/GYMxfY.jpg',
+                uri: 'https://ifh.cc/g/7Ogx5q.jpg',
               }}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            activeOpacity={0.8}
             style={styles.HealthBox}
             onPress={() => {
-              navigation.navigate('Chest');
+              navigation.navigate('LowerBody');
             }}>
-            <View style={styles.HealthNameBox}>
-              <Text style={styles.HealthName}>와이드 푸쉬업</Text>
-            </View>
-            <Icon name="right" style={styles.RightArrow} />
+            <Text style={styles.HealthName}>하체 운동</Text>
             <Image
               style={styles.HealthImageBox}
               source={{
-                uri: 'https://ifh.cc/g/g9aWLd.png',
+                uri: 'https://ifh.cc/g/KCtwLO.jpg',
               }}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            activeOpacity={0.8}
             style={styles.HealthBox}
             onPress={() => {
-              navigation.navigate('Chest');
+              navigation.navigate('Shoulder');
             }}>
-            <View style={styles.HealthNameBox}>
-              <Text style={styles.HealthName}>내로우 스탠스 푸쉬업</Text>
-            </View>
-            <Icon name="right" style={styles.RightArrow} />
+            <Text style={styles.HealthName}>어깨 운동</Text>
             <Image
               style={styles.HealthImageBox}
               source={{
-                uri: 'https://ifh.cc/g/ldZHPk.png',
+                uri: 'https://ifh.cc/g/FLmCap.jpg',
+              }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.HealthBox}
+            onPress={() => {
+              navigation.navigate('Abs');
+            }}>
+            <Text style={styles.HealthName}>복근 운동</Text>
+            <Image
+              style={styles.HealthImageBox}
+              source={{
+                uri: 'https://ifh.cc/g/6A7Ysc.jpg',
               }}
             />
           </TouchableOpacity>
@@ -149,41 +129,25 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   HealthBox: {
-    justifyContent: 'center',
-    width: '100%',
+    alignItems: 'center',
+    width: '90%',
     height: '18%',
     marginBottom: 10,
-    backgroundColor: 'lightgray',
   },
   HealthImageBox: {
-    width: '40%',
+    width: '100%',
     height: '100%',
     resizeMode: 'cover',
+    borderRadius: 10,
   },
   HealthName: {
-    color: 'black',
-    fontSize: 20,
-    fontWeight: '300',
-    position: 'absolute',
-    left: 10,
-    zIndex: 1,
-  },
-  HealthNameBox: {
-    width: '50%',
-    height: '100%',
-    zIndex: 1,
-    position: 'absolute',
-    justifyContent: 'center',
-    top: 0,
-    left: 163,
-  },
-  RightArrow: {
-    position: 'absolute',
-    zIndex: 1,
+    color: 'white',
     fontSize: 30,
-    right: 10,
-    color: 'black',
+    opacity: 0.8,
+    fontWeight: '600',
+    position: 'absolute',
+    zIndex: 1,
   },
 });
 
-export default Chest;
+export default Arm;

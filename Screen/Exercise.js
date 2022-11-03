@@ -17,7 +17,7 @@ import tw from 'twrnc';
 
 import {theme} from '../colors';
 
-const LowerBody = ({navigation}) => {
+const Exercise = ({navigation}) => {
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -29,9 +29,12 @@ const LowerBody = ({navigation}) => {
             <Icon name="home" size={50} color="white" />
           </TouchableOpacity>
         </View>
-        <View style={styles.MainMenu}>
+
+        <ScrollView
+          contentContainerStyle={tw`p-4 grow bg-white justify-between`}>
           <TouchableOpacity
-            style={styles.HealthBox}
+            activeOpacity={0.8}
+            style={tw`items-center w-full h-[135px] mb-4`}
             onPress={() => {
               navigation.navigate('Chest');
             }}>
@@ -44,7 +47,8 @@ const LowerBody = ({navigation}) => {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.HealthBox}
+            activeOpacity={0.8}
+            style={tw`items-center w-full h-[135px] mb-4`}
             onPress={() => {
               navigation.navigate('Back');
             }}>
@@ -57,7 +61,8 @@ const LowerBody = ({navigation}) => {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.HealthBox}
+            activeOpacity={0.8}
+            style={tw`items-center w-full h-[135px] mb-4`}
             onPress={() => {
               navigation.navigate('LowerBody');
             }}>
@@ -70,7 +75,8 @@ const LowerBody = ({navigation}) => {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.HealthBox}
+            activeOpacity={0.8}
+            style={tw`items-center w-full h-[135px] mb-4`}
             onPress={() => {
               navigation.navigate('Shoulder');
             }}>
@@ -83,7 +89,8 @@ const LowerBody = ({navigation}) => {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.HealthBox}
+            activeOpacity={0.8}
+            style={tw`items-center w-full h-[135px] mb-4`}
             onPress={() => {
               navigation.navigate('Abs');
             }}>
@@ -95,8 +102,24 @@ const LowerBody = ({navigation}) => {
               }}
             />
           </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={tw`items-center w-full h-[135px]`}
+            onPress={() => {
+              navigation.navigate('Arm');
+            }}>
+            <Text style={styles.HealthName}>팔 운동</Text>
+            <Image
+              style={styles.HealthImageBox}
+              source={{
+                uri: 'https://ifh.cc/g/LTSKsQ.jpg',
+              }}
+            />
+          </TouchableOpacity>
+        </ScrollView>
+        <View style={tw`w-full h-[9%] justify-center items-center bg-black`}>
+          <Text style={styles.footerText}>HealthDay</Text>
         </View>
-        <View style={styles.footer}></View>
       </SafeAreaView>
     </>
   );
@@ -108,31 +131,17 @@ const styles = StyleSheet.create({
     backgroundColor: theme.bg,
   },
   header: {
-    flex: 1,
     justifyContent: 'space-between',
     flexDirection: 'row',
     padding: 5,
     fontSize: 25,
     color: 'white',
+    backgroundColor: 'black',
   },
-  footer: {
-    width: '100%',
-    height: '7%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  MainMenu: {
-    flex: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  HealthBox: {
-    alignItems: 'center',
-    width: '90%',
-    height: '18%',
-    marginBottom: 10,
+  footerText: {
+    fontSize: 30,
+    color: 'white',
+    padding: 5,
   },
   HealthImageBox: {
     width: '100%',
@@ -150,4 +159,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LowerBody;
+export default Exercise;
