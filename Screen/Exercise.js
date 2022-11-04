@@ -25,6 +25,7 @@ const Exercise = ({navigation}) => {
           <TouchableOpacity onPress={() => navigation.pop()}>
             <Icon name="back" size={50} color="white" />
           </TouchableOpacity>
+          <Text style={tw`text-white text-3xl font-semibold`}>HealthDay</Text>
           <TouchableOpacity onPress={() => navigation.popToTop()}>
             <Icon name="home" size={50} color="white" />
           </TouchableOpacity>
@@ -117,9 +118,6 @@ const Exercise = ({navigation}) => {
             />
           </TouchableOpacity>
         </ScrollView>
-        <View style={tw`w-full h-[9%] justify-center items-center bg-black`}>
-          <Text style={styles.footerText}>HealthDay</Text>
-        </View>
       </SafeAreaView>
     </>
   );
@@ -132,11 +130,11 @@ const styles = StyleSheet.create({
   },
   header: {
     justifyContent: 'space-between',
+    alignItems: 'center',
     flexDirection: 'row',
     padding: 5,
     fontSize: 25,
     color: 'white',
-    backgroundColor: 'black',
   },
   footerText: {
     fontSize: 30,

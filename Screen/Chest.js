@@ -25,6 +25,7 @@ const Chest = ({navigation}) => {
           <TouchableOpacity onPress={() => navigation.pop()}>
             <Icon name="back" size={50} color="white" />
           </TouchableOpacity>
+          <Text style={tw`text-white text-3xl font-semibold`}>HealthDay</Text>
           <TouchableOpacity onPress={() => navigation.popToTop()}>
             <Icon name="home" size={50} color="white" />
           </TouchableOpacity>
@@ -116,7 +117,6 @@ const Chest = ({navigation}) => {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles.footer}></View>
       </SafeAreaView>
     </>
   );

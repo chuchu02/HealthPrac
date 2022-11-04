@@ -9,6 +9,7 @@ import {
   Image,
   ImageResizeMode,
   SafeAreaView,
+  TouchableHighlight,
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -18,7 +19,10 @@ import tw from 'twrnc';
 
 import {theme} from '../colors';
 
-const Chest = ({navigation}) => {
+const ExplanationPage = ({navigation}) => {
+  const [waying, setWaying] = useState(true);
+  const caution = () => setWaying(false);
+  const way = () => setWaying(true);
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -42,14 +46,26 @@ const Chest = ({navigation}) => {
           />
         </View>
         <View style={styles.SubMenu}>
-          <TouchableOpacity style={styles.SubMenu2}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={way}
+            style={{
+              ...styles.SubMenu2,
+              backgroundColor: waying ? '#3300CC' : '#333333',
+            }}>
             <Text style={styles.SubmenuText}>운동방법</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.SubMenu2}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={caution}
+            style={{
+              ...styles.SubMenu2,
+              backgroundColor: !waying ? '#3300CC' : '#333333',
+            }}>
             <Text style={styles.SubmenuText}>주의사항</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.Submenu3}>
+        <View style={{...styles.Submenu3, display: waying ? 'flex' : 'none'}}>
           <Text style={styles.SubmenuText2}>
             1. 팔을 어깨너비보다 조금 넓게 벌려 바닥을 짚는다.
           </Text>
@@ -62,6 +78,21 @@ const Chest = ({navigation}) => {
           </Text>
           <Text style={styles.SubmenuText2}>
             4. 호흡을 내쉬면서 시작 위치로 올라온다.
+          </Text>
+        </View>
+        <View style={{...styles.Submenu3, display: !waying ? 'flex' : 'none'}}>
+          <Text style={styles.SubmenuText2}>
+            1. 시선은 정면을 응시하며, 복부에 긴장을 유지시켜 몸을 일직선으로
+            곧게 유지한다.
+          </Text>
+          <Text style={styles.SubmenuText2}>
+            2. 몸을 내릴때 팔꿈치가 위나 옆으로 지나치게 벌어지는걸 주의한다.
+          </Text>
+          <Text style={styles.SubmenuText2}>
+            3. 내려 갔을때 팔꿈치와 어깨가 평행을 이룰수 있도록 한다.
+          </Text>
+          <Text style={styles.SubmenuText2}>
+            4. 엉덩이가 위나 아래로 내려가지 않도록 주의한다.
           </Text>
         </View>
       </SafeAreaView>
@@ -124,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Chest;
+export default ExplanationPage;
